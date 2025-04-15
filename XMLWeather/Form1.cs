@@ -16,12 +16,11 @@ namespace XMLWeather
         // create list to hold day objects
         public static List<Day> days = new List<Day>();
 
-        public static string city = "Fairbanks";
+        public static string city = "Stratford, ca";
 
         public Form1()
         {
             InitializeComponent();
-
             ExtractForecast();
             ExtractCurrent();
 

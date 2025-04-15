@@ -14,12 +14,6 @@ namespace XMLWeather
         public CurrentScreen()
         {
             InitializeComponent();
-            DisplayCurrent();
-        }
-
-        public void DisplayCurrent()
-        {
-
         }
         private void forecastLabel_Click(object sender, EventArgs e)
         {
@@ -32,8 +26,10 @@ namespace XMLWeather
         private void CurrentScreen_Load(object sender, EventArgs e)
         {
             {
+                // Check if the days list is empty
                 if (Form1.days.Count == 0)
                 {
+                    // If empty, show an error message
                     MessageBox.Show("Weather data failed to load.");
                     return;
                 }

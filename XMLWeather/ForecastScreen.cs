@@ -14,16 +14,10 @@ namespace XMLWeather
         public ForecastScreen()
         {
             InitializeComponent();
-            displayForecast();
         }
-
-        public void displayForecast()
-        {
-
-        }
-
         private void todayLabel_Click(object sender, EventArgs e)
         {
+            // When the "Today" label is clicked, switch to the CurrentScreen
             Form f = this.FindForm();
             f.Controls.Remove(this);
 
@@ -99,6 +93,7 @@ namespace XMLWeather
 
         private string FormatDate(string rawDate)
         {
+            // Convert the raw date string to a DateTime object
             DateTime dt;
             if (DateTime.TryParse(rawDate, out dt))
             {
@@ -112,6 +107,7 @@ namespace XMLWeather
 
         private string GetDaySuffix(int day)
         {
+            // Determine the suffix for the day of the month
             if (day >= 11 && day <= 13) return "th";
 
             switch (day % 10)
