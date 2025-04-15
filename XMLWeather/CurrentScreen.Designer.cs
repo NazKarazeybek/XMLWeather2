@@ -45,7 +45,7 @@
             this.windSpeedOutput = new System.Windows.Forms.Label();
             this.humidityLabel = new System.Windows.Forms.Label();
             this.windSpeedLabel = new System.Windows.Forms.Label();
-            this.citySelector = new System.Windows.Forms.TextBox();
+            this.cityInput = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.weatherIconPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.humidityIcon)).BeginInit();
@@ -229,26 +229,29 @@
             this.windSpeedLabel.TabIndex = 49;
             this.windSpeedLabel.Text = "Wind Speed";
             // 
-            // citySelector
+            // cityInput
             // 
-            this.citySelector.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.citySelector.Location = new System.Drawing.Point(22, 15);
-            this.citySelector.Name = "citySelector";
-            this.citySelector.Size = new System.Drawing.Size(128, 29);
-            this.citySelector.TabIndex = 50;
+            this.cityInput.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.cityInput.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cityInput.ForeColor = System.Drawing.Color.White;
+            this.cityInput.Location = new System.Drawing.Point(22, 15);
+            this.cityInput.Name = "cityInput";
+            this.cityInput.Size = new System.Drawing.Size(128, 29);
+            this.cityInput.TabIndex = 50;
             // 
             // searchButton
             // 
             this.searchButton.BackColor = System.Drawing.Color.Transparent;
+            this.searchButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchButton.BackgroundImage")));
             this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchButton.Location = new System.Drawing.Point(157, 15);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(33, 29);
+            this.searchButton.Size = new System.Drawing.Size(30, 30);
             this.searchButton.TabIndex = 51;
-            this.searchButton.Text = "🔍";
             this.searchButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.searchButton.UseVisualStyleBackColor = false;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // CurrentScreen
             // 
@@ -257,7 +260,7 @@
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.Controls.Add(this.searchButton);
-            this.Controls.Add(this.citySelector);
+            this.Controls.Add(this.cityInput);
             this.Controls.Add(this.windSpeedLabel);
             this.Controls.Add(this.humidityLabel);
             this.Controls.Add(this.windSpeedOutput);
@@ -302,7 +305,7 @@
         private System.Windows.Forms.Label windSpeedOutput;
         private System.Windows.Forms.Label humidityLabel;
         private System.Windows.Forms.Label windSpeedLabel;
-        private System.Windows.Forms.TextBox citySelector;
+        private System.Windows.Forms.TextBox cityInput;
         private System.Windows.Forms.Button searchButton;
     }
 }
