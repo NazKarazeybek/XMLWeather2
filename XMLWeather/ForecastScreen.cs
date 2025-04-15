@@ -64,29 +64,39 @@ namespace XMLWeather
 
         private Image GetWeatherIcon(string condition)
         {
+            //showing weather icon accordingly to the condition (i used if statements instead of switch not to make it strict)
             string cond = condition?.ToLower() ?? "";
 
-            switch (cond)
+            if (cond.Contains("clear"))
             {
-                case "clear":
-                    return Properties.Resources.smallClearIcon;
-                case "clouds":
-                case "cloudy":
-                    return Properties.Resources.smallCloudyIcon;
-                case "rain":
-                    return Properties.Resources.smallRainIcon;
-                case "snow":
-                case "snowy":
-                    return Properties.Resources.smallSnowyIcon;
-                case "drizzle":
-                    return Properties.Resources.smallDrizzleIcon;
-                case "mist":
-                case "fog":
-                    return Properties.Resources.smallMistyIcon;
-                default:
-                    return Properties.Resources.smallClearIcon;
+                return Properties.Resources.smallClearIcon;
+            }
+            else if (cond.Contains("cloud"))
+            {
+                return Properties.Resources.smallCloudyIcon;
+            }
+            else if (cond.Contains("rain"))
+            {
+                return Properties.Resources.smallRainIcon;
+            }
+            else if (cond.Contains("snow"))
+            {
+                return Properties.Resources.smallSnowyIcon;
+            }
+            else if (cond.Contains("drizzle"))
+            {
+                return Properties.Resources.smallDrizzleIcon;
+            }
+            else if (cond.Contains("mist") || cond.Contains("fog"))
+            {
+                return Properties.Resources.smallMistyIcon;
+            }
+            else
+            {
+                return Properties.Resources.smallClearIcon; // default fallback
             }
         }
+
         private string FormatDate(string rawDate)
         {
             DateTime dt;
